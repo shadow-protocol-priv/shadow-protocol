@@ -1,0 +1,11 @@
+[solver]
+rpc_url = "https://mainnet.base.org"
+router_address = "0x0000000000000000000000000000000000000000"
+verifier_address = "0x0000000000000000000000000000000000000000"
+private_key = "0x0000000000000000000000000000000000000000000000000000000000000000"
+min_profit_threshold = 0.001
+max_slippage = 50
+
+[solver.dex_apis]
+oneinch_api_key = "YOUR_1INCH_API_KEY"
+cowswap_api_url = "https://api.cow.fi/mainnet"
