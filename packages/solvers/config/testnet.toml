@@ -1,0 +1,16 @@
+[solver]
+rpc_url = "https://mainnet.base.org"
+router_address = "0x0000000000000000000000000000000000000000"
+verifier_address = "0x0000000000000000000000000000000000000000"
+private_key = "0x0000000000000000000000000000000000000000000000000000000000000000"
+min_profit_threshold = 0.001
+max_slippage = 50
+
+[solver.dex_apis]
+oneinch_api_key = "QMPsTCsOjOvi66KqIPoFkwZtbXqdbBaj"
+cowswap_api_url = "https://api.cow.fi/mainnet"
+
+[solver.fhe]
+# TODO: Replace with actual FHE keys from Zama
+public_key = "fhe-public-key-placeholder"
+private_key_path = "/path/to/fhe/private/key"

@@ -43,6 +43,10 @@ impl Default for AppConfig {
                     oneinch_api_key: "".to_string(),
                     cowswap_api_url: "https://api.cow.fi/mainnet".to_string(),
                 },
+                fhe: crate::types::FheConfig {
+                    public_key: "fhe-public-key-placeholder".to_string(),
+                    private_key_path: "/path/to/fhe/private/key".to_string(),
+                },
                 min_profit_threshold: 0.001, // 0.1%
                 max_slippage: 50, // 0.5%
             },

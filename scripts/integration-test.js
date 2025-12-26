@@ -6,6 +6,8 @@
  */
 
 const { createShadowSDK } = require("../packages/sdk/dist/index.js");
+// TODO: Import FHE initialization
+// const { initializeFHE } = require("../packages/sdk/dist/encrypt.js");
 
 class MockSigner {
   async signTypedData(domain, types, value) {

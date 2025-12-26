@@ -1,12 +1,15 @@
 import { IntentData, EncryptedBlob } from './types';
 /**
- * Mock FHE encryption for MVP
- * In production, this will use Zama fhEVM
+ * Initialize TFHE WASM
  */
-export declare function encryptIntent(intentData: IntentData, publicKey?: string): Promise<EncryptedBlob>;
+export declare function initializeFHE(publicKeyData?: string): Promise<void>;
 /**
- * Mock FHE decryption for testing
- * In production, this would be done off-chain by solvers
+ * Real FHE encryption using TFHE WASM
+ */
+export declare function encryptIntent(intentData: IntentData, publicKeyData?: string): Promise<EncryptedBlob>;
+/**
+ * FHE decryption for testing (normally done by solvers)
+ * Note: In production, decryption happens on-chain or by authorized solvers
  */
 export declare function decryptIntent(encryptedBlob: EncryptedBlob, privateKey: string): Promise<IntentData>;
 /**

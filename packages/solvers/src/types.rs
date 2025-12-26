@@ -53,6 +53,7 @@ pub struct SolverConfig {
     pub verifier_address: String,
     pub private_key: String,
     pub dex_apis: DexConfig,
+    pub fhe: FheConfig,
     pub min_profit_threshold: f64,
     pub max_slippage: u32,
 }
@@ -63,9 +64,16 @@ pub struct DexConfig {
     pub cowswap_api_url: String,
 }
 
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct FheConfig {
+    pub public_key: String,
+    pub private_key_path: String,
+}
+
 #[derive(Debug, Clone)]
 pub enum SolverError {
     DecryptionFailed(String),
+    DecryptionError(String),
     RoutingFailed(String),
     SubmissionFailed(String),
     NetworkError(String),
@@ -75,6 +83,7 @@ impl std::fmt::Display for SolverError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             SolverError::DecryptionFailed(msg) => write!(f, "Decryption failed: {}", msg),
+            SolverError::DecryptionError(msg) => write!(f, "Decryption error: {}", msg),
             SolverError::RoutingFailed(msg) => write!(f, "Routing failed: {}", msg),
             SolverError::SubmissionFailed(msg) => write!(f, "Submission failed: {}", msg),
             SolverError::NetworkError(msg) => write!(f, "Network error: {}", msg),

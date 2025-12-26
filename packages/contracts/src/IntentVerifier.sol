@@ -92,3 +92,10 @@ contract IntentVerifier is IIntentVerifier, Ownable {
         authorizedSolvers[solver] = false;
     }
 }
+
+// Week 6-7 (Testing & Launch):
+
+// Cross-component integration tests
+// Security review
+// Mainnet deployment
+// Community launch

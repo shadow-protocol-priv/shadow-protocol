@@ -3,12 +3,12 @@ import { SwapParams } from '../src/types';
 
 // Mock wallet signer for testing
 class MockSigner {
-  async signTypedData(domain: any, types: any, value: any): Promise<string> {
+  async signTypedData(domain, types, value){
     // Return a mock signature
     return '0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef';
   }
 
-  getAddress(): Promise<string> {
+  getAddress() {
     return Promise.resolve('0x742d35Cc6634C0532925a3b844Bc454e4438f44e');
   }
 }
